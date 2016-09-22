@@ -40,8 +40,8 @@ if [ "$OS" == "Windows_NT" ]; then
   [ -f $ConfigDir/01_OneHidden.cntk ] || exit 1 
   [ -f $ConfigDir/02_Convolution.cntk ] || exit 1 
 
-  cntkrun 01_OneHidden.cntk "command=trainNetwork trainNetwork=[SGD=[maxEpochs=1]]" || exit $?
-  cntkrun 02_Convolution.cntk "command=trainNetwork trainNetwork=[SGD=[maxEpochs=1]]" || exit $?
+  cntkrun 01_OneHidden.cntk "stderr=- command=trainNetwork trainNetwork=[SGD=[maxEpochs=1]]" || exit $?
+  cntkrun 02_Convolution.cntk "stderr=- command=trainNetwork trainNetwork=[SGD=[maxEpochs=1]]" || exit $?
 
   # Run the evaluation test
   cd $TEST_BIN_DIR
