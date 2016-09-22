@@ -29,6 +29,7 @@ if [ "$OS" == "Windows_NT" ]; then
   OutputDir=$MnistDir/Output
   ResnetModelDir=$ImageDir/Miscellaneous/ImageNet/ResNet
 
+  cp $TestDataDir/Image/MNIST/v0/Train-28x28_cntk_text.txt $DataDir || exit 1
   cp $TestDataDir/Image/MNIST/v0/Test-28x28_cntk_text.txt $DataDir || exit 1
   cp $TestDataDir/PreTrainedModels/ResNet/v0/ResNet_18.model $ResnetModelDir/ || exit 1 
 
