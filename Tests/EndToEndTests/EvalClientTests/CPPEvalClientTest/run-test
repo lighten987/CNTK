@@ -19,13 +19,13 @@ else
     TestDataDir=$CNTK_EXTERNAL_TESTDATA_SOURCE_DIRECTORY
 fi
 
-cp $TestDataDir/Image/MNIST/v0/Train-28x28_cntk_text.txt $DataDir || exit 1
-
 ImageDir=$TEST_ROOT_DIR/../../Examples/Image
 MnistDir=$ImageDir/MNIST
 DataDir=$MnistDir/Data
 ConfigDir=$MnistDir/Config
 OutputDir=$MnistDir/Output
+
+cp $TestDataDir/Image/MNIST/v0/Train-28x28_cntk_text.txt $DataDir || exit 1
 
 # Train model for evaluation
 [ -d $OutputDir ] || mkdir $OutputDir || exit 1
